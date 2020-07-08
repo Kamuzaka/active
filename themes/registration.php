@@ -63,7 +63,7 @@ global $themes;
                                         <select class="custom-select mr-sm-2 form-control is-invalid" name="group_of_member" id="inlineFormCustomSelect" aria-describedby="validatedInputGroupPrepend" required>
                                             <option selected disabled value=""></option>
                                             <option value="ИСТ-311">ИСТ-311</option>
-                                            <option value="ПРИ-311">ПРИ-311</option>
+                                            <option value="ПМИ-311">ПМИ-341</option>
                                             <option value="ИБ-311">ИБ-311</option>
                                         </select>
                                     </div>

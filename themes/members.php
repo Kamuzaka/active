@@ -41,8 +41,8 @@ global $themes;
                         <td><?=$item['name2']; ?></td>
                         <td><?=$item['name1']; ?></td>
                         <td><?=$item['group_of_member']; ?></td>
-                        <td>20</td>
-                        <td>20</td>
+                        <td><?=$item['points']; ?></td>
+                        <td><?=$item['count_events']; ?></td>
                         </tr>
                         <?php endforeach;?>
                     </tbody>

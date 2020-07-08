@@ -19,7 +19,7 @@ global $themes;
   <br>
 		<div class="row">
 			<div class="col">
-				<table class="table table-sm">
+				<table id="dtOrderExample" class="table table-striped table-sm" cellspacing="0" width="100%">
   <thead>
     <tr>
 
@@ -30,6 +30,7 @@ global $themes;
       <th scope="col">Группа</th>
       <th scope="col">Должность</th>
       <th scope="col">Баллы</th>
+      <th scope="col">Мероприятия</th>
       <th scope="col"></th>
       <th scope="col"></th>
     </tr>
@@ -43,7 +44,8 @@ global $themes;
       <td><?=$item['name1']; ?></td>
       <td><?=$item['name3']; ?></td>
       <td>Должность</td>
-      <td>20</td>
+      <td><?=$item['points']; ?></td>
+      <td><?=$item['count_events']; ?></td>
       <td><a href="/edit_member/" class="btn btn-success" role="button" aria-pressed="true">Изменить</a></td>
       <td><button type="button" class="btn btn-danger">Удалить</button></td>
     </tr>
@@ -56,5 +58,14 @@ global $themes;
 		</div>
 	</div>
 </section>
+<script>
+    $(document).ready( function () {
+        $('#dtOrderExample').DataTable({
+            searching: false,
+            paging: false,
+            info: false
+        });
+    });
+</script>
 </body>
 </html>
