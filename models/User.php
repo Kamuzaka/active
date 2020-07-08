@@ -3,6 +3,21 @@ class User extends Model
 {
 	public $fields;
 
+	public function get() {
+
+		$this->table = 'members';
+
+		if (isset($this->fields['id'])) {
+			$stmt = $this->db->prepare("SELECT * FROM " . $this->table . " WHERE id_members = ?");
+			$stmt->execute([$this->fields['id']]);
+		} elseif (isset($this->fields['login']) && isset($this->fields['password'])) {
+			$stmt = $this->db->prepare("SELECT * FROM " . $this->table . " WHERE login = ? AND password = ?");
+			$stmt->execute([$this->fields['login'], $this->fields['password']]);
+		}
+
+		return $stmt->fetch();
+	}
+
 	public function create() {
 
 		// $this->fields['password'] = password_hash($this->fields['password'], PASSWORD_BCRYPT);

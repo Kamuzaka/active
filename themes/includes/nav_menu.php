@@ -21,6 +21,8 @@
 </li>
 </ul>
 </div>
+
+    <?php if (isset($data['admin']) && $data['admin']) :?>
 <div class="btn-group mr-3" role="group">
 <button id="btnGroupDrop1" type="button" class="btn nav-link text-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Администрирование</button>
 <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
@@ -29,9 +31,14 @@
    <a class="dropdown-item" href="/edit/">Изменить информацию актива</a>
 </div>
 </div>
-<a class="btn nav-link text-primary mr-3" href="/cabinet/" role="button">Фамилия Имя Отчество</a>
-<a class="btn nav-link btn-outline-primary mr-3" href="/auth/" role="button">Войти</a>
+        <a class="btn nav-link btn-outline-primary mr-3" href="/auth/" role="button">Выйти</a>
+	<?php elseif ($data['user']) :?>
+<a class="btn nav-link text-primary mr-3" href="/cabinet/" role="button"><?= $data['user']['name1'] . ' ' . $data['user']['name2'] . ' ' . $data['user']['name3'];?></a>
+        <a class="btn nav-link btn-outline-primary mr-3" href="/auth/" role="button">Выйти</a>
+    <?php else: ?>
+        <a class="btn nav-link btn-outline-primary mr-3" href="/auth/" role="button">Войти</a>
 <a class="btn nav-link btn-outline-primary mr-3" href="/registration/" role="button">Регистрация</a>
+    <?php endif;?>
 </nav>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
