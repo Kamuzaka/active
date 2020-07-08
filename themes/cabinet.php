@@ -11,6 +11,7 @@
    </head>
    <body>
       <? include_once "includes/nav_menu.php"; ?>
+
       <section class="mt-5">
          <div class="container">
             <div class="row">
@@ -18,7 +19,7 @@
                   <div class="card border-primary">
                      <div class="container">
                         <div class="row px-5 py-3">
-                           <h1>Сиринёк Алёна Александровна ПМИ-341</h1>
+                           <h1><?= $data['user']['name1'] . ' ' . $data['user']['name2'] . ' ' . $data['user']['name3'];?> ПМИ-341</h1>
                         </div>
                      </div>
                      <div class="row">
@@ -51,13 +52,13 @@
                            <div class="row">
                            	<div class="col">
 		                           <p class="card-text"><small class="text-muted">Телефон:</small></p>
-			                        <p class="text-monospace">+7 900 874 54 65
+			                        <p class="text-monospace"><?= $data['user']['phone']; ?>
 			                        <hr class="mr-5">
 			                        </p>
                            	</div>
                            	<div class="col">
                            		<p class="card-text"><small class="text-muted">Почта:</small></p>
-                           		<p class="text-monospace">example@mail.ru
+                           		<p class="text-monospace"><?= $data['user']['email']; ?>
                            <hr class="mr-5">
                            </p>
                            	</div>

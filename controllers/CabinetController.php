@@ -2,6 +2,12 @@
 class CabinetController extends Controller
 {
 	public function index() {
-		$this->render('cabinet', []);
+		if ($this->isAuthorized()) {
+			$this->render('cabinet', [
+				'user' => (new User(['id' => $_COOKIE['user']]))->get()
+			]);
+		} else {
+			$this->redirect('auth');
+		}
 	}
 }

@@ -2,6 +2,10 @@
 class EditController extends Controller
 {
 	public function index() {
-		$this->render('edit', []);
+		if ($this->isAdmin()) {
+			$this->render('edit', []);
+		} else {
+			$this->redirect('auth');
+		}
 	}
 }

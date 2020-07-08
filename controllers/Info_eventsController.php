@@ -2,6 +2,10 @@
 class Info_eventsController extends Controller
 {
 	public function index() {
-		$this->render('info_events', []);
+		if ($this->isAdmin()) {
+			$this->render('info_events', []);
+		} else {
+			$this->redirect('auth');
+		}
 	}
 }
