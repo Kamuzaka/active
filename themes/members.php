@@ -48,15 +48,17 @@ global $themes;
     </tr>
   </thead>
   <tbody>
-    <tr class="table-primary">
-      <th scope="row">1</th>
+  <<?php foreach($data['list'] as $key => $item):?>
+    <tr>
+      <th scope="row"><?= ($key + 1);?></th>
       <td><img src="<?= $themes;?>img/icon.png" alt="" class="rounded-circle" style="height: 30px" ></td>
-      <td>Имя</td>
-      <td>Фамилия</td>
-      <td>Группа</td>
+      <td><?=$item['name2']; ?></td>
+      <td><?=$item['name1']; ?></td>
+      <td><?=$item['group_of_member']; ?></td>
       <td>20</td>
       <td>20</td>
     </tr>
+  <?php endforeach;?>
   </tbody>
 </table>
 			</div>

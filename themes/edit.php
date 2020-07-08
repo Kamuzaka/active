@@ -35,50 +35,19 @@ global $themes;
     </tr>
   </thead>
   <tbody>
+  <?php foreach ($data['list'] as $key =>$item) :?>
     <tr class="table-primary">
-      <th scope="row">1</th>
+      <th scope="row"><?=($key+1) ?></th>
       <td><img src="<?= $themes;?>img/icon.png" alt="" class="rounded-circle" style="height: 30px" ></td>
-      <td>Имя</td>
-      <td>Фамилия</td>
-      <td>Отчество</td>
+      <td><?=$item['name2']; ?></td>
+      <td><?=$item['name1']; ?></td>
+      <td><?=$item['name3']; ?></td>
       <td>Должность</td>
       <td>20</td>
       <td><a href="/edit_member/" class="btn btn-success" role="button" aria-pressed="true">Изменить</a></td>
       <td><button type="button" class="btn btn-danger">Удалить</button></td>
     </tr>
-    <tr class="table-primary">
-      <th scope="row">2</th>
-      <td><img src="<?= $themes;?>img/icon.png" alt="" class="rounded-circle" style="height: 30px" ></td>
-      <td>Имя</td>
-      <td>Фамилия</td>
-      <td>Отчество</td>
-      <td>Должность</td>
-      <td>20</td>
-      <td><a href="/edit_member/" class="btn btn-success" role="button" aria-pressed="true">Изменить</a></td>
-      <td><button type="button" class="btn btn-danger">Удалить</button></td>
-    </tr>
-    <tr class="table-primary">
-      <th scope="row">3</th>
-      <td><img src="<?= $themes;?>img/icon.png" alt="" class="rounded-circle" style="height: 30px" ></td>
-      <td>Имя</td>
-      <td>Фамилия</td>
-      <td>Отчество</td>
-      <td>Должность</td>
-      <td>20</td>
-      <td><a href="/edit_member/" class="btn btn-success" role="button" aria-pressed="true">Изменить</a></td>
-      <td><button type="button" class="btn btn-danger">Удалить</button></td>
-    </tr>
-    <tr class="table-primary">
-      <th scope="row">4</th>
-      <td><img src="<?= $themes;?>img/icon.png" alt="" class="rounded-circle" style="height: 30px" ></td>
-      <td>Имя</td>
-      <td>Фамилия</td>
-      <td>Отчество</td>
-      <td>Должность</td>
-      <td>20</td>
-      <td><a href="/edit_member/" class="btn btn-success" role="button" aria-pressed="true">Изменить</a></td>
-      <td><button type="button" class="btn btn-danger">Удалить</button></td>
-    </tr>
+    <?php endforeach;?>
   </tbody>
 </table>
 			</div>

@@ -18,39 +18,18 @@ global $themes;
   </div>
   <br>
 		<div class="row">
+            <?php foreach($data['list'] as $item): ?>
 			<div class="col">
 				<div class="card border-primary" style="width: 18rem;">
 					<div class="card-body">
-						<h5 class="card-title">Название мероприятия</h5>
-						<div class="input-group-text d-flex justify-content-center font-weight-bold mb-2">13 июля 2019</div>
-						<p class="card-text">Описание Описание Описание Описание Описание Описание Описание Описание Описание</p>
+						<h5 class="card-title"><?=$item['header']; ?></h5>
+						<div class="input-group-text d-flex justify-content-center font-weight-bold mb-2"><?=$item['event_date']; ?></div>
+						<p class="card-text"><?=$item['description']; ?></p>
 						<a href="#" class="btn btn-primary">Участвовать</a>
 					</div>
 				</div>
 			</div>
-			<div class="col">
-				<div class="card border-primary" style="width: 18rem;">
-					<div class="card-body">
-						<h5 class="card-title">Название мероприятия</h5>
-						<div class="input-group-text d-flex justify-content-center font-weight-bold mb-2">16 июля 2019</div>
-						<p class="card-text">Описание Описание Описание Описание Описание Описание Описание Описание Описание</p>
-						<a href="#" class="btn btn-primary">Участвовать</a>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card border-primary" style="width: 18rem;">
-					<div class="card-body">
-						<h5 class="card-title">Название мероприятия</h5>
-						<div class="input-group-text d-flex justify-content-center font-weight-bold mb-2">21 июля 2019</div>
-						<p class="card-text">Описание Описание Описание Описание Описание Описание Описание Описание Описание</p>
-						<a href="#" class="btn btn-primary">Участвовать</a>
-					</div>
-				</div>
-			</div>
-
-
-
+            <?php endforeach;?>
 		</div>
 	</div>
 </section>

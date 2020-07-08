@@ -3,6 +3,12 @@ class User extends Model
 {
 	public $fields;
 
+	public function all() {
+		$stmt = $this->db->prepare("SELECT * FROM members");
+		$stmt->execute();
+		return $stmt->fetchAll(PDO::FETCH_ASSOC);
+	}
+
 	public function get() {
 
 		$this->table = 'members';

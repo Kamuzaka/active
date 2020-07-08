@@ -18,48 +18,21 @@ global $themes;
   </div>
   <br>
 		<div class="row">
+			<?php foreach($data['list'] as $item): ?>
 			<div class="col">
 				<div class="card border-primary" style="width: 18rem;">
 					<div class="card-body">
-						<h5 class="card-title">Название мероприятия</h5>
-						<div class="input-group-text d-flex justify-content-center font-weight-bold mb-2">13 июля 2019</div>
-						<p class="card-text">Описание Описание Описание Описание Описание Описание Описание Описание Описание</p>
-						<p class="card-text"><small class="text-muted">Количество участников - </small></p>
-						<p class="card-text"><small class="text-muted">Уровень мероприятия - </small></p>
-						<p class="card-text"><small class="text-muted">Форма проведения - </small></p>
+						<h5 class="card-title"><?=$item['header']; ?></h5>
+						<div class="input-group-text d-flex justify-content-center font-weight-bold mb-2"><?=$item['event_date']; ?></div>
+						<p class="card-text"><?=$item['description']; ?></p>
+						<p class="card-text"><small class="text-muted">Количество участников - 2</small></p>
+						<p class="card-text"><small class="text-muted">Уровень мероприятия - вузовский</small></p>
+						<p class="card-text"><small class="text-muted">Форма проведения - закрытая</small></p>
 						<a href="/about_event/" class="btn btn-primary">Подробнее</a>
 					</div>
 				</div>
 			</div>
-			<div class="col">
-				<div class="card border-primary" style="width: 18rem;">
-					<div class="card-body">
-						<h5 class="card-title">Название мероприятия</h5>
-						<div class="input-group-text d-flex justify-content-center font-weight-bold mb-2">16 июля 2019</div>
-						<p class="card-text">Описание Описание Описание Описание Описание Описание Описание Описание Описание</p>
-						<p class="card-text"><small class="text-muted">Количество участников - </small></p>
-						<p class="card-text"><small class="text-muted">Уровень мероприятия - </small></p>
-						<p class="card-text"><small class="text-muted">Форма проведения - </small></p>
-						<a href="/about_event/" class="btn btn-primary">Подробнее</a>
-					</div>
-				</div>
-			</div>
-			<div class="col">
-				<div class="card border-primary" style="width: 18rem;">
-					<div class="card-body">
-						<h5 class="card-title">Название мероприятия</h5>
-						<div class="input-group-text d-flex justify-content-center font-weight-bold mb-2">21 июля 2019</div>
-						<p class="card-text">Описание Описание Описание Описание Описание Описание Описание Описание Описание</p>
-						<p class="card-text"><small class="text-muted">Количество участников - </small></p>
-						<p class="card-text"><small class="text-muted">Уровень мероприятия - </small></p>
-						<p class="card-text"><small class="text-muted">Форма проведения - </small></p>
-						<a href="/about_event/" class="btn btn-primary">Подробнее</a>
-					</div>
-				</div>
-			</div>
-
-
-
+            <?php endforeach;?>
 		</div>
 	</div>
 </section>
